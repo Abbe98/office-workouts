@@ -12,10 +12,8 @@ Vue.use(VueSkipTo);
 
 Vue.prototype.$http = {};
 
-// #TODO Example endpoint configuration - change it to your API endpoint or create duplicate ones.
-Vue.prototype.$http.wdqs = axios.create({
-  baseURL: 'https://query.wikidata.org',
-});
+// use root as endpoint
+Vue.prototype.$http = axios.create();
 
 new Vue({
   router,

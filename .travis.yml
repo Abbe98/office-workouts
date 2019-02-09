@@ -2,11 +2,6 @@ language: node_js
 node_js:
   - "stable"
 
-# if you do not intend to use greenkeeper remove this
-before_install: npm install -g greenkeeper-lockfile
-after_script: greenkeeper-lockfile-upload
-before_script: greenkeeper-lockfile-update
-
 install: npm install
 script: npm run build
 
