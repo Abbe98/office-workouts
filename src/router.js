@@ -5,8 +5,6 @@ import Exercises from './views/Exercises.vue';
 
 Vue.use(Router);
 
-const routerRequestHandler = axios.create();
-
 function strengthOrStretch() {
   // #TODO settings and time driven in the future
   if (Math.random() > 0.5) return 'strength';
@@ -16,7 +14,7 @@ function strengthOrStretch() {
 
 async function getRandomExercise() {
   const type = strengthOrStretch();
-  return routerRequestHandler.get(`${type}.json`)
+  return axios.get(`${type}.json`)
     .then(response => {
       const exercises = response.data;
       return [type, exercises[Math.floor(Math.random() * exercises.length)].id];
