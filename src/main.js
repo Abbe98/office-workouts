@@ -13,7 +13,7 @@ Vue.use(VueSkipTo);
 Vue.prototype.$http = {};
 
 // use root as endpoint
-Vue.prototype.$http = axios.create();
+Vue.prototype.$http.base = axios.create();
 
 new Vue({
   router,
