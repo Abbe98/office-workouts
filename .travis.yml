@@ -1,0 +1,33 @@
+language: node_js
+node_js:
+  - "stable"
+
+# if you do not intend to use greenkeeper remove this
+before_install: npm install -g greenkeeper-lockfile
+after_script: greenkeeper-lockfile-upload
+before_script: greenkeeper-lockfile-update
+
+install: npm install
+script: npm run build
+
+# github pages setup
+# deploy:
+#   provider: pages
+#   skip-cleanup: true
+#   github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+#   keep-history: true
+#   on:
+#     branch: master
+#   local-dir: dist
+#   target-branch: gh-pages
+
+# github build branch setup
+# deploy:
+#   provider: pages
+#   skip-cleanup: true
+#   github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+#   keep-history: true
+#   on:
+#     branch: master
+#   local-dir: dist
+#   target-branch: build

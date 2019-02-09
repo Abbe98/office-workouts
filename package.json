@@ -1,0 +1,35 @@
+{
+  "name": "vue-boilerplate",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "lint-css": "stylelint 'src/**/*.vue' --fix",
+    "lint-all": "npm run lint && npm run lint-css"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "vue": "^2.5.16",
+    "vue-router": "^3.0.1",
+    "vue-skip-to": "^1.0.4",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@mapbox/stylelint-processor-arbitrary-tags": "^0.2.0",
+    "@vue/cli-plugin-babel": "^3.0.0-rc.10",
+    "@vue/cli-plugin-eslint": "^3.0.0-rc.10",
+    "@vue/cli-service": "^3.0.0-rc.10",
+    "@vue/eslint-config-standard": "^4.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "stylelint": "^9.4.0",
+    "stylelint-config-standard": "^18.2.0",
+    "vue-template-compiler": "^2.5.16"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
