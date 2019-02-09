@@ -19,7 +19,7 @@ async function getRandomExercise() {
   return routerRequestHandler.get(`${type}.json`)
     .then(response => {
       const exercises = response.data;
-      return exercises[Math.floor(Math.random() * exercises.length)].id;
+      return [type, exercises[Math.floor(Math.random() * exercises.length)].id];
     });
 }
 
@@ -33,12 +33,12 @@ export default new Router({
       path: '/exercises',
       beforeEnter: (to, from, next) => {
         getRandomExercise().then(exercise => {
-          next(`/exercises/${exercise}`);
+          next(`/exercises/${exercise[0]}/${exercise[1]}`);
         });
       },
     },
     {
-      path: '/exercises/:id',
+      path: '/exercises/:type/:id',
       name: 'exercises',
       component: Exercises,
       props: true,

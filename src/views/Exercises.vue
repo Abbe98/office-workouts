@@ -7,10 +7,10 @@
 <script>
 export default {
   name: 'exercises',
-  props: ['id'],
+  props: ['type', 'id'],
   created() {
     // #TODO get exercise details
-    console.log(this.id);
+    console.log(this.type, this.id);
   },
 };
 </script>
