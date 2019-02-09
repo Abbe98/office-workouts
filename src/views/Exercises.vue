@@ -1,6 +1,6 @@
 <template>
   <main class="exercises">
-    {{ id }}
+    <p v-if="exercise">{{ exercise.name }}</p>
   </main>
 </template>
 
@@ -8,9 +8,19 @@
 export default {
   name: 'exercises',
   props: ['type', 'id'],
-  created() {
-    // #TODO get exercise details
-    console.log(this.type, this.id);
+  data() {
+    return {
+      exercise: null,
+    };
+  },
+  mounted() {
+    // #TODO 404?
+    this.$http.base.get(`${this.type}.json`)
+      .then(response => (
+        this.exercise = response.data.find(obj => {
+          return obj.id === this.id;
+        })
+      ));
   },
 };
 </script>
