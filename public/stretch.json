@@ -1,18 +1,18 @@
 [
   {
-    "id": "wrist-stretch",
-    "name": "Wrist Stretch"
+    "id": "wrist-stretches",
+    "name": "Wrist Stretchs"
   },
   {
-    "id": "eagle-arm-twist",
-    "name": "Eagle Arm Twist"
+    "id": "eagle-arm-twists",
+    "name": "Eagle Arm Twists"
   },
   {
-    "id": "latissimus-stretch",
-    "name": "Latissimus Stretch"
+    "id": "latissimus-stretches",
+    "name": "Latissimus Stretches"
   },
   {
-    "id": "pec-stretch",
-    "name": "Pec Stretch"
+    "id": "pec-stretches",
+    "name": "Pec Stretches"
   }
 ]
