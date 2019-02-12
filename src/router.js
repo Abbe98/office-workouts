@@ -1,25 +1,9 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import axios from 'axios';
-import Exercises from './views/Exercises.vue';
+import Exercises from './views/Exercises';
+import { getRandomExercise } from './helpers';
 
 Vue.use(Router);
-
-function strengthOrStretch() {
-  // #TODO settings and time driven in the future
-  if (Math.random() > 0.5) return 'strength';
-
-  return 'stretch';
-};
-
-async function getRandomExercise() {
-  const type = strengthOrStretch();
-  return axios.get(`${type}.json`)
-    .then(response => {
-      const exercises = response.data;
-      return [type, exercises[Math.floor(Math.random() * exercises.length)].id];
-    });
-}
 
 export default new Router({
   routes: [
@@ -31,7 +15,7 @@ export default new Router({
       path: '/exercises',
       beforeEnter: (to, from, next) => {
         getRandomExercise().then(exercise => {
-          next(`/exercises/${exercise[0]}/${exercise[1]}`);
+          next(`/exercises/${exercise[0]}/${exercise[1].id}`);
         });
       },
     },

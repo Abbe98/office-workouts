@@ -2,10 +2,13 @@
   <main class="exercises">
     <p v-if="exercise">{{ exercise.name }}</p>
     <router-link to="/exercises">Another one?</router-link>
+    <button @click="initInterval">Get hourly reminders?</button>
   </main>
 </template>
 
 <script>
+import { createInterval, getNotificationPermissions } from '../helpers';
+
 export default {
   name: 'exercises',
   props: ['type', 'id'],
@@ -26,6 +29,14 @@ export default {
             return obj.id === this.id;
           })
         ));
+    },
+    initInterval() {
+      // #TODO init interval if already enabled?
+      getNotificationPermissions().then(resp => {
+        if (resp) {
+          createInterval(this);
+        }
+      });
     },
   },
   watch: {
