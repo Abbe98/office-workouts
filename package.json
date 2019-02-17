@@ -10,6 +10,9 @@
     "lint-all": "npm run lint && npm run lint-css"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.15",
+    "@fortawesome/free-solid-svg-icons": "^5.7.2",
+    "@fortawesome/vue-fontawesome": "^0.1.5",
     "axios": "^0.18.0",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1",
