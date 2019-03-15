@@ -2,7 +2,7 @@
   <main class="exercises">
     <div class="center">
       <p v-if="exercise">{{ exercise.name }}</p>
-      <router-link title="Another random one?" to="/exercises"><font-awesome-icon icon="redo" size="4x" /></router-link>
+      <router-link title="Another random one?" to="/exercises"><font-awesome-icon class="reload-icon" icon="redo" size="4x" /></router-link>
     </div>
 
     <link-button v-if="!remindersOn" @link-click="initInterval">Get hourly reminders?</link-button>
@@ -75,4 +75,13 @@ export default {
 p {
   font-size: 3em;
 }
+
+.reload-icon {
+  transition: transform .3s ease-in-out;
+}
+
+.reload-icon:hover {
+  transform: rotate(14deg);
+}
+
 </style>
