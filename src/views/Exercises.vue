@@ -2,10 +2,11 @@
   <main class="exercises">
     <div class="center">
       <p v-if="exercise">{{ exercise.name }}</p>
-      <router-link title="Another random one?" to="/exercises"><font-awesome-icon class="reload-icon" icon="redo" size="4x" /></router-link>
+      <router-link title="Another random one?" to="/exercises"><font-awesome-icon class="reload-icon" :icon="['fas', 'redo']" size="4x" /></router-link>
     </div>
 
     <link-button v-if="!remindersOn" @link-click="initInterval">Get hourly reminders?</link-button>
+    <a class="google-btn" target="_blank" :href="'https://www.google.com/search?q=' + exercise.name" title="Google this exercise?"><font-awesome-icon :icon="['fab', 'google']" size="2x" /></a>
   </main>
 </template>
 
@@ -84,4 +85,9 @@ p {
   transform: rotate(14deg);
 }
 
+.google-btn {
+  position: fixed;
+  bottom: 1.5em;
+  right: 1.5em;
+}
 </style>
