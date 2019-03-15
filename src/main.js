@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
-import store from './store';
+import { store, vault } from './store';
 
 import axios from 'axios';
 import VueSkipTo from 'vue-skip-to';
@@ -24,5 +24,6 @@ Vue.prototype.$http.base = axios.create();
 new Vue({
   router,
   store,
+  vault,
   render: h => h(App),
 }).$mount('#app');

@@ -5,19 +5,27 @@
       <router-link title="Another random one?" to="/exercises"><font-awesome-icon icon="redo" size="4x" /></router-link>
     </div>
 
-    <link-button @link-click="initInterval">Get hourly reminders?</link-button>
+    <link-button v-if="!remindersOn" @link-click="initInterval">Get hourly reminders?</link-button>
   </main>
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 import { createInterval, getNotificationPermissions } from '../helpers';
 import LinkButton from '../components/LinkButton';
+import { vault } from '../store';
 
 export default {
   name: 'exercises',
   props: ['type', 'id'],
   components: {
     LinkButton,
+  },
+  computed: {
+    ...mapState({
+      remindersOn: state => vault.state.remindersOn,
+    }),
   },
   data() {
     return {
@@ -26,6 +34,9 @@ export default {
   },
   mounted() {
     this.newExercise(this.type, this.id);
+    if (this.remindersOn) {
+      createInterval(this);
+    }
   },
   methods: {
     newExercise() {
@@ -38,10 +49,10 @@ export default {
         ));
     },
     initInterval() {
-      // #TODO init interval if already enabled?
       getNotificationPermissions().then(resp => {
         if (resp) {
           createInterval(this);
+          vault.commit('turnOnReminder');
         }
       });
     },
