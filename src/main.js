@@ -27,3 +27,9 @@ new Vue({
   vault,
   render: h => h(App),
 }).$mount('#app');
+
+document.body.addEventListener('keydown', event => {
+  if (event.code === 'Space') {
+    router.push('/exercises');
+  }
+});
