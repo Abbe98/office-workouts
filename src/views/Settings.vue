@@ -19,16 +19,9 @@ export default {
   components: {},
   computed: {
     searchService: {
-      get () { return vault.state.searchService },
-      set (value) { vault.commit('setSearchService', value) },
+      get() { return vault.state.searchService; },
+      set(value) { vault.commit('setSearchService', value); },
     },
-  },
-  data() {
-    return {}
-  },
-  mounted() {
-  },
-  methods: {
   },
 };
 </script>

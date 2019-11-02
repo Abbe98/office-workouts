@@ -30,8 +30,8 @@ export default {
       remindersOn: state => vault.state.remindersOn,
     }),
     searchService: {
-      get () { return vault.state.searchService },
-    }
+      get() { return vault.state.searchService; },
+    },
   },
   data() {
     return {
