@@ -1,7 +1,7 @@
 <template>
-  <main class="exercises">
+  <main v-if="exercise" class="exercises">
     <div class="center">
-      <p v-if="exercise">{{ exercise.name }}</p>
+      <p>{{ exercise.name }}</p>
       <router-link title="Another random one?" to="/exercises"><font-awesome-icon class="reload-icon" :icon="['fas', 'redo']" size="4x" /></router-link>
     </div>
 
