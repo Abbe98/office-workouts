@@ -6,7 +6,9 @@
     </div>
 
     <link-button v-if="!remindersOn" @link-click="initInterval">Get hourly reminders?</link-button>
-    <a class="google-btn" target="_blank" :href="'https://www.google.com/search?q=' + exercise.name" title="Google this exercise?"><font-awesome-icon :icon="['fab', 'google']" size="2x" /></a>
+    <a v-if="searchService == 'google'" class="search-btn" target="_blank" :href="'https://www.google.com/search?q=' + exercise.name" title="Search for this exercise on Google?"><font-awesome-icon :icon="['fab', 'google']" size="2x" /></a>
+    <a v-if="searchService == 'youtube'" class="search-btn" target="_blank" :href="'https://www.youtube.com/results?search_query=' + exercise.name" title="Search for this exercise on YouTube?"><font-awesome-icon :icon="['fab', 'youtube']" size="2x" /></a>
+    <a v-if="searchService == 'ddg'" class="search-btn" target="_blank" :href="'https://duckduckgo.com/?q=' + exercise.name" title="Search for this exercise on DuckDuckGo?"><font-awesome-icon :icon="['fas', 'search']" size="2x" /></a>
   </main>
 </template>
 
@@ -27,6 +29,9 @@ export default {
     ...mapState({
       remindersOn: state => vault.state.remindersOn,
     }),
+    searchService: {
+      get () { return vault.state.searchService },
+    }
   },
   data() {
     return {
@@ -85,7 +90,7 @@ p {
   transform: rotate(14deg);
 }
 
-.google-btn {
+.search-btn {
   position: fixed;
   bottom: 1.5em;
   right: 1.5em;
