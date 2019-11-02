@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Exercises from './views/Exercises';
+import Settings from './views/Settings';
 import { getRandomExercise } from './helpers';
 
 Vue.use(Router);
@@ -24,6 +25,11 @@ export default new Router({
       name: 'exercises',
       component: Exercises,
       props: true,
+    },
+    {
+      path: '/settings',
+      name: 'settings',
+      component: Settings,
     },
   ],
 });

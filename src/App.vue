@@ -1,7 +1,10 @@
 <template>
   <div id="app">
     <header>
-      <h1>Office Workouts</h1>
+      <router-link to="/exercises"><h1>Office Workouts</h1></router-link>
+      <router-link title="Settings" to="/settings">
+        <font-awesome-icon class="menu-icon" :icon="['fas', 'cog']" size="2x" />
+      </router-link>
     </header>
     <router-view/>
   </div>
@@ -37,12 +40,32 @@ header {
 
 h1 {
   margin: 0;
+  float: left;
+}
+
+.menu-icon {
+  float: right;
+  padding: 20px;
 }
 
 a,
 a:hover,
 a:active,
 a:focus {
+  color: var(--text-on-main);
+}
+
+main {
+  padding-left: 10px;
+  padding-right: 10px;
+  max-width: 800px;
+  margin: auto;
+}
+
+main a,
+main a:hover,
+main a:active,
+main a:focus {
   color: var(--text-on-background);
 }
 </style>

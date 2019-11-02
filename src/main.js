@@ -7,11 +7,12 @@ import axios from 'axios';
 import VueSkipTo from 'vue-skip-to';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { faRedo } from '@fortawesome/free-solid-svg-icons';
+import { faRedo, faCog } from '@fortawesome/free-solid-svg-icons';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 
 library.add(faRedo);
 library.add(faGoogle);
+library.add(faCog);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 Vue.config.productionTip = false;
