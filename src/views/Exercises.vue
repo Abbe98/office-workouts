@@ -13,8 +13,6 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
-
 import { createInterval, getNotificationPermissions } from '../helpers';
 import LinkButton from '../components/LinkButton';
 import { vault } from '../store';
@@ -26,9 +24,9 @@ export default {
     LinkButton,
   },
   computed: {
-    ...mapState({
-      remindersOn: state => vault.state.remindersOn,
-    }),
+    remindersOn: {
+      get() { return vault.state.remindersOn; },
+    },
     searchService: {
       get() { return vault.state.searchService; },
     },
