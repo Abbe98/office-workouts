@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+import { vault } from './store';
+
 export function createInterval(app, minutes = [50]) {
   setInterval(() => {
     const date = new Date();
@@ -7,7 +9,7 @@ export function createInterval(app, minutes = [50]) {
     const currentHour = date.getHours();
 
     // check if it's working hours and if the given notification minute is now
-    if (!8 < currentHour && !currentHour < 17) return;
+    if (!vault.state.workHoursStart < currentHour && !currentHour < vault.state.workHoursEnd) return;
     if (!minutes.includes(currentMinute)) return;
 
     getRandomExercise().then(exercise => {

@@ -10,6 +10,8 @@ export const vault = new Vuex.Store({
   state: {
     remindersOn: false,
     searchService: 'google', // google, youtube, ddg
+    workHoursStart: 8,
+    workHoursEnd: 17,
   },
   mutations: {
     turnOnReminder(state) {
@@ -18,6 +20,14 @@ export const vault = new Vuex.Store({
 
     setSearchService(state, service) {
       state.searchService = service;
+    },
+
+    setWorkHoursEnd(state, time) {
+      state.workHoursEnd = time;
+    },
+
+    setWorkHoursStart(state, time) {
+      state.workHoursStart = time;
     },
   },
   actions: {
