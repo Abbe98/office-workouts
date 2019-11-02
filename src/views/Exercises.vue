@@ -76,6 +76,7 @@ export default {
   align-items: center;
   justify-content: center;
   height: 80vh;
+  text-align: center;
 }
 
 p {
