@@ -14,5 +14,21 @@
   {
     "id": "pec-stretches",
     "name": "Pec Stretches"
+  },
+  {
+    "id": "shoulder-shrugs",
+    "name": "Shoulder Shrugs"
+  },
+  {
+    "id": "rhomboid-upper-stretches",
+    "name": "Rhomboid Upper Stretches"
+  },
+  {
+    "id": "standing-trunk-rotation",
+    "name": "Standing Trunk Rotations"
+  },
+  {
+    "id": "seated-pigeon-pose",
+    "name": "Seated Pigeon Pose"
   }
 ]
