@@ -1,0 +1,34 @@
+[
+  {
+    "id": "wrist-stretches",
+    "name": "Wrist Stretches"
+  },
+  {
+    "id": "eagle-arm-twists",
+    "name": "Eagle Arm Twists"
+  },
+  {
+    "id": "latissimus-stretches",
+    "name": "Latissimus Stretches"
+  },
+  {
+    "id": "pec-stretches",
+    "name": "Pec Stretches"
+  },
+  {
+    "id": "shoulder-shrugs",
+    "name": "Shoulder Shrugs"
+  },
+  {
+    "id": "rhomboid-upper-stretches",
+    "name": "Rhomboid Upper Stretches"
+  },
+  {
+    "id": "standing-trunk-rotation",
+    "name": "Standing Trunk Rotations"
+  },
+  {
+    "id": "seated-pigeon-pose",
+    "name": "Seated Pigeon Pose"
+  }
+]
